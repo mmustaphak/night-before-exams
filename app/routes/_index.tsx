@@ -1,5 +1,10 @@
 import type { Route } from "./+types/_index";
-import { Outlet } from "react-router";
+import { Link, Outlet, useLocation } from "react-router";
+import { IoBookOutline } from "react-icons/io5";
+import { HiOutlineHome } from "react-icons/hi";
+import { FiUpload } from "react-icons/fi";
+import { LuSunMoon, LuUser } from "react-icons/lu";
+import Header from "~/components/Layout/Header";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -10,10 +15,18 @@ export function meta({}: Route.MetaArgs) {
 
 export default function App() {
   return (
-    <div className="max-w-[450px] mx-auto">
-      <header>Header Goes Here</header>
+    <div className="container flex flex-col max-w-[450px] mx-auto h-dvh">
+      <Header />
+
+      <h1>Content Goes Here</h1>
       <Outlet />
-      <footer>Footer goes here</footer>
+
+      <footer className="container flex items-center justify-between mt-auto">
+        ©{new Date().getFullYear()} Night Before Exams
+        <button>
+          <LuSunMoon className="size-8" />
+        </button>
+      </footer>
     </div>
-  )
+  );
 }
