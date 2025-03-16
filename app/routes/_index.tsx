@@ -1,7 +1,4 @@
 import type { Route } from "./+types/_index";
-import { Outlet } from "react-router";
-import Footer from "~/components/Layout/Footer";
-import Header from "~/components/Layout/Header";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,11 +9,8 @@ export function meta({}: Route.MetaArgs) {
 
 export default function App() {
   return (
-    <div className="container flex flex-col max-w-[450px] mx-auto h-dvh">
-      <Header />
+    <div className="container">
       <h1>Content Goes Here</h1>
-      <Outlet />
-      <Footer />
     </div>
   );
 }

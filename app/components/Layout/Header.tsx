@@ -37,7 +37,7 @@ export default function Header() {
   });
 
   return (
-    <header className="flex items-center justify-between">
+    <header className="container flex items-center justify-between">
       <Link to="/" className="flex items-center gap-2">
         <IoBookOutline className="size-8 text-purple" />
         <span className="font-bold text-xl">NBE</span>
