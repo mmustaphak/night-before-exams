@@ -12,6 +12,14 @@ html,
 body {
   @apply bg-white dark:bg-bg-black;
 
+  h1{
+    @apply text-3xl font-semibold text-center;
+  }
+
+  p{
+    @apply text-stone-400;
+  }
+
   .container{
     @apply p-4;
   }

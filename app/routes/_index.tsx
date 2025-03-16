@@ -35,7 +35,7 @@ export default function App() {
 
   const renderedAppFeatures = appFeatures.map((feature) => {
     return (
-      <div className="flex p-2 gap-x-4 shadow-xs">
+      <div className="flex p-2 py-4 gap-x-4 shadow-xs">
         <feature.icon
           color={feature.color}
           className="p-2 rounded-full size-10 bg-stone-100 text-purple"
@@ -50,13 +50,13 @@ export default function App() {
 
   return (
     <div className="container flex flex-col">
-      <h1 className="text-3xl font-semibold text-center">Night Before Exams</h1>
-      <p className="mt-2 text-center text-stone-400">
+      <h1>Night Before Exams</h1>
+      <p className="mt-3 text-center">
         Upload past question papers, extract patterns, and ace your exams with
         interactive study guides
       </p>
       <Link
-        className="self-center rounded-md w-fit p-2 mt-2 text-stone-200 bg-purple"
+        className="self-center rounded-md w-fit p-2 mt-3 text-stone-200 bg-purple"
         to="upload"
       >
         Upload Question Paper
