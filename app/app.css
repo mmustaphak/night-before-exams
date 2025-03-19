@@ -16,7 +16,7 @@ body {
     @apply text-3xl font-semibold text-center;
   }
 
-  p{
+  p, label{
     @apply text-stone-400;
   }
 
