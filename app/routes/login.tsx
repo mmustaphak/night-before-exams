@@ -1,7 +1,15 @@
 import { FaFacebook, FaGoogle } from "react-icons/fa6";
 import { GoLock } from "react-icons/go";
 import { LuUser } from "react-icons/lu";
-import { Form, Link } from "react-router";
+import { Form, Link, redirect, useNavigate } from "react-router";
+import type { Route } from "../+types/root";
+
+export async function action({ request }: Route.ActionArgs) {
+  const formData = await request.formData();
+  console.log("Form Has been submitted");
+  formData.forEach((entry) => console.log(entry));
+  redirect("/");
+}
 
 export default function login() {
   return (
@@ -9,7 +17,7 @@ export default function login() {
       <h1>Welcome to NBE</h1>
       <p className="mt-4 text-center">Sign in to access your study material</p>
 
-      <Form className="mt-8">
+      <Form action="/login" method="post" className="mt-8">
         <label htmlFor="email">Email</label>
         <div className="relative">
           <input
@@ -21,16 +29,15 @@ export default function login() {
           <LuUser className="absolute size-8 inset-y-0 left-0 pl-3 pt-2 flex items-center pointer-events-none" />
         </div>
 
-
         <div className="relative">
-            <label htmlFor="password">Password</label>
-            <input
-              className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-              type="password"
-              name="password"
-              id="password"
-            />
-            <GoLock className="absolute size-8 inset-y-0 left-0 top-5 pl-3 pt-4 flex items-center pointer-events-none" />
+          <label htmlFor="password">Password</label>
+          <input
+            className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            type="password"
+            name="password"
+            id="password"
+          />
+          <GoLock className="absolute size-8 inset-y-0 left-0 top-5 pl-3 pt-4 flex items-center pointer-events-none" />
         </div>
 
         <div className="flex justify-between mt-4">
